@@ -2,6 +2,7 @@ pipeline{
   agent any
   environment {
     DOCKER_CREDENTIALS= credentials('docker')
+  }
   stages{
     stage('checkout'){
       steps{
