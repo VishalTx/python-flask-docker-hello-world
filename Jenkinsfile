@@ -1,9 +1,9 @@
 pipeline{
   agent any
   stages{
-    stage('nexus'){
+    stage('checkout'){
       steps{
-        nexusArtifactUploader artifacts: [[artifactId: '', classifier: '', file: '', type: '']], credentialsId: 'nexus', groupId: '', nexusUrl: '34.203.191.215:8081', nexusVersion: 'nexus2', protocol: 'http', repository: 'task01', version: ''
+        checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'github', url: 'https://github.com/VishalTx/python-flask-docker-hello-world.git']]])
       }
     }
   }
