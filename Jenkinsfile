@@ -9,6 +9,7 @@ pipeline{
     stage('Build Docker') {
       steps{
        // build the docker image from the source code using the BUILD_ID parameter in image name
+        docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
         sh "docker build -t flask-app ."
       }
     }
