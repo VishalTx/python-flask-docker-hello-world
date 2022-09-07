@@ -19,5 +19,5 @@ RUN conda install -c anaconda pandas
 EXPOSE 9090
 
 # Run app.py when the container launches
-CMD ["python3", "main.py"]
+CMD ["python3", "app.py"]
 
